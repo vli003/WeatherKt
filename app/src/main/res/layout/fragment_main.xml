@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr_layout"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="#4A90E2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_place"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_location"
+            app:layout_constraintStart_toEndOf="@id/iv_location"
+            app:layout_constraintTop_toTopOf="@id/iv_location"
+            tools:text="City" />
+
+        <ImageView
+            android:id="@+id/iv_current_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_my_location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_location" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintEnd_toStartOf="@id/iv_current_loc"
+            app:layout_constraintTop_toTopOf="@id/iv_current_loc" />
+
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="date, day"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tv_city"
+            app:layout_constraintTop_toBottomOf="@id/tv_city" />
+
+        <ImageView
+            android:id="@+id/iv_big_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_group_4"
+            app:layout_constraintStart_toStartOf="@id/tv_day"
+            app:layout_constraintTop_toBottomOf="@id/tv_day" />
+
+        <ImageView
+            android:id="@+id/iv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:src="@drawable/ic_temp"
+            app:layout_constraintStart_toEndOf="@id/iv_big_icon"
+            app:layout_constraintTop_toTopOf="@id/iv_big_icon" />
+
+        <ImageView
+            android:id="@+id/iv_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_humidity"
+            app:layout_constraintStart_toEndOf="@id/iv_big_icon"
+            app:layout_constraintTop_toBottomOf="@id/iv_temp" />
+
+        <ImageView
+            android:id="@+id/iv_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:src="@drawable/ic_wind"
+            app:layout_constraintBottom_toBottomOf="@id/iv_big_icon"
+            app:layout_constraintStart_toEndOf="@id/iv_big_icon" />
+
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="MAX\u2103 / MIN\u2103"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@id/iv_temp"
+            app:layout_constraintTop_toTopOf="@id/iv_temp" />
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40 %"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tv_temp"
+            app:layout_constraintTop_toTopOf="@id/iv_humidity" />
+
+        <TextView
+            android:id="@+id/tv_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3m / sec"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintTop_toTopOf="@id/iv_wind" />
+
+        <ImageView
+            android:id="@+id/iv_wind_dir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="37dp"
+            android:src="@drawable/ic_icon_wind_ne"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_wind" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hours"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#5A9FF0"
+        app:layout_constraintTop_toBottomOf="@id/constr_layout"
+        tools:listitem="@layout/item_by_hours" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_days"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/rv_hours"
+        tools:listitem="@layout/item_by_days" />
+</androidx.constraintlayout.widget.ConstraintLayout>
