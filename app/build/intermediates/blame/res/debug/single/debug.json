@@ -8,6 +8,10 @@
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_search.png"
     },
     {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_icon_wind_n.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_icon_wind_n.xml"
+    },
+    {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
@@ -22,6 +26,10 @@
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_search.png.flat",
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-mdpi/ic_search.png"
+    },
+    {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_icon_wind_ws.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_icon_wind_ws.xml"
     },
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_temp.png.flat",
@@ -156,12 +164,20 @@
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-hdpi/ic_humidity.png"
     },
     {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_icon_wind_wn.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_icon_wind_wn.xml"
+    },
+    {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_temp.png.flat",
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_temp.png"
     },
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_group_4.png.flat",
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-mdpi/ic_group_4.png"
+    },
+    {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_icon_wind_e.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_icon_wind_e.xml"
     },
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_place.png.flat",
@@ -172,8 +188,16 @@
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/layout/item_by_hours.xml"
     },
     {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_icon_wind_w.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_icon_wind_w.xml"
+    },
+    {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_humidity.xml.flat",
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_humidity.xml"
+    },
+    {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_white_day_cloudy.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_white_day_cloudy.xml"
     },
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_group_4.png.flat",
@@ -196,8 +220,16 @@
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_group_4.xml"
     },
     {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_icon_wind_se.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_icon_wind_se.xml"
+    },
+    {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_search.png.flat",
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_search.png"
+    },
+    {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_icon_wind_s.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_icon_wind_s.xml"
     },
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
@@ -226,6 +258,10 @@
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_my_location.png.flat",
         "source": "/Users/imac/Desktop/Projects/WeatherKt/app/build/generated/res/pngs/debug/drawable-hdpi/ic_my_location.png"
+    },
+    {
+        "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/drawable_ic_white_day_bright.xml.flat",
+        "source": "/Users/imac/Desktop/Projects/WeatherKt/app/src/main/res/drawable/ic_white_day_bright.xml"
     },
     {
         "merged": "/Users/imac/Desktop/Projects/WeatherKt/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
