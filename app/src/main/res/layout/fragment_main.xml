@@ -109,8 +109,9 @@
             android:layout_marginStart="16dp"
             android:text="MAX\u2103"
             android:textColor="#FFFFFF"
-            app:layout_constraintStart_toEndOf="@id/iv_temp"
-            app:layout_constraintTop_toTopOf="@id/iv_temp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_temp"
+            app:layout_constraintStart_toEndOf="@id/iv_temp" />
 
         <TextView
             android:id="@+id/tv_separ"
@@ -118,6 +119,7 @@
             android:layout_height="wrap_content"
             android:text=" / "
             android:textColor="#FFFFFF"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/tv_temp_max"
             app:layout_constraintTop_toTopOf="@id/tv_temp_max" />
 
@@ -127,6 +129,7 @@
             android:layout_height="wrap_content"
             android:text="MIN\u2103"
             android:textColor="#FFFFFF"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/tv_separ"
             app:layout_constraintTop_toTopOf="@id/tv_separ" />
 
@@ -136,8 +139,9 @@
             android:layout_height="wrap_content"
             android:text="40 %"
             android:textColor="#FFFFFF"
-            app:layout_constraintStart_toStartOf="@id/tv_temp_max"
-            app:layout_constraintTop_toTopOf="@id/iv_humidity" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_humidity"
+            app:layout_constraintStart_toStartOf="@id/tv_temp_max" />
 
         <TextView
             android:id="@+id/tv_wind"
@@ -145,8 +149,9 @@
             android:layout_height="wrap_content"
             android:text="3m / sec"
             android:textColor="#FFFFFF"
-            app:layout_constraintStart_toStartOf="@id/tv_humidity"
-            app:layout_constraintTop_toTopOf="@id/iv_wind" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_wind"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity" />
 
         <ImageView
             android:id="@+id/iv_wind_dir"

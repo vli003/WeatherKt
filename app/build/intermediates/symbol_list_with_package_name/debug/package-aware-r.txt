@@ -707,6 +707,14 @@ drawable ic_search
 drawable ic_temp
 drawable ic_white_day_bright
 drawable ic_white_day_cloudy
+drawable ic_white_day_rain
+drawable ic_white_day_shower
+drawable ic_white_day_thunder
+drawable ic_white_night_bright
+drawable ic_white_night_cloudy
+drawable ic_white_night_rain
+drawable ic_white_night_shower
+drawable ic_white_night_thunder
 drawable ic_wind
 drawable notification_action_background
 drawable notification_bg
@@ -1038,10 +1046,11 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
-string degrees
+string degree
 string hello_blank_fragment
 string search_menu_title
 string status_bar_notification_info_overflow
+string windSpeed
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

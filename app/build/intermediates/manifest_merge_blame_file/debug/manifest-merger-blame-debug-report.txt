@@ -6,66 +6,68 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml
+8-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml
+9-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-11-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:5:5-79
-11-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:5:22-76
+11-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:5:5-79
+11-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:5:22-76
 12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-12-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:6:5-81
-12-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:6:22-78
+12-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:6:5-81
+12-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.INTERNET" />
-13-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:7:5-67
-13-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:7:22-64
+13-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:7:5-67
+13-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:7:22-64
 14
 15    <application
-15-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:9:5-24:19
-16        android:allowBackup="true"
-16-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:10:9-35
-17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-17-->[androidx.core:core:1.2.0] /Users/imac/.gradle/caches/transforms-2/files-2.1/9075dbfaab39e40f8982b36dac1019b6/core-1.2.0/AndroidManifest.xml:24:18-86
-18        android:debuggable="true"
-19        android:extractNativeLibs="false"
-20        android:icon="@mipmap/ic_launcher"
-20-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:11:9-43
-21        android:label="@string/app_name"
-21-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:12:9-41
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:13:9-54
-23        android:supportsRtl="true"
-23-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:14:9-35
-24        android:testOnly="true"
-25        android:theme="@style/AppTheme"
-25-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:15:9-40
-26        android:usesCleartextTraffic="true" >
-26-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:16:9-44
-27        <activity android:name="app.android.weatherkt.MainActivity" >
-27-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:17:9-23:20
-27-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:17:19-47
-28            <intent-filter>
-28-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:18:13-22:29
-29                <action android:name="android.intent.action.MAIN" />
-29-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:19:17-69
-29-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:19:25-66
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:21:17-77
-31-->/Users/imac/Desktop/Projects/WeatherKt/app/src/main/AndroidManifest.xml:21:27-74
-32            </intent-filter>
-33        </activity>
-34
-35        <provider
-35-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/imac/.gradle/caches/transforms-2/files-2.1/9bc22e9e17bf6e30f29bf2b1ae5951fb/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
-36            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-36-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/imac/.gradle/caches/transforms-2/files-2.1/9bc22e9e17bf6e30f29bf2b1ae5951fb/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
-37            android:authorities="app.android.weatherkt.lifecycle-process"
-37-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/imac/.gradle/caches/transforms-2/files-2.1/9bc22e9e17bf6e30f29bf2b1ae5951fb/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
-38            android:exported="false"
-38-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/imac/.gradle/caches/transforms-2/files-2.1/9bc22e9e17bf6e30f29bf2b1ae5951fb/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
-39            android:multiprocess="true" />
-39-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/imac/.gradle/caches/transforms-2/files-2.1/9bc22e9e17bf6e30f29bf2b1ae5951fb/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
-40    </application>
-41
-42</manifest>
+15-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:9:5-25:19
+16        android:name="app.android.weatherkt.controller.MyApplication"
+16-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:10:9-49
+17        android:allowBackup="true"
+17-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:11:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.2.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9075dbfaab39e40f8982b36dac1019b6\core-1.2.0\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:extractNativeLibs="false"
+21        android:icon="@mipmap/ic_launcher"
+21-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:12:9-43
+22        android:label="@string/app_name"
+22-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:13:9-41
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:14:9-54
+24        android:supportsRtl="true"
+24-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:15:9-35
+25        android:testOnly="true"
+26        android:theme="@style/AppTheme"
+26-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:16:9-40
+27        android:usesCleartextTraffic="true" >
+27-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:17:9-44
+28        <activity android:name="app.android.weatherkt.MainActivity" >
+28-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:18:9-24:20
+28-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:18:19-47
+29            <intent-filter>
+29-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:19:13-23:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:20:17-69
+30-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:20:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:22:17-77
+32-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:22:27-74
+33            </intent-filter>
+34        </activity>
+35
+36        <provider
+36-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+37            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+37-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+38            android:authorities="app.android.weatherkt.lifecycle-process"
+38-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+39            android:exported="false"
+39-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+40            android:multiprocess="true" />
+40-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+41    </application>
+42
+43</manifest>

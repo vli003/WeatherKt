@@ -16,14 +16,12 @@ import kotlin.collections.ArrayList
 class WeatherViewModel : ViewModel() {
 
     var weatherList = ArrayList<X>()
-    //    var weatherList = MutableLiveData<ArrayList<X>>()
     var currentWeatherLiveData = MutableLiveData<WeatherResponse>()
     var weatherListByHoursLiveData = MutableLiveData<ArrayList<X>>()
     var weatherListByDaysLiveData = MutableLiveData<ArrayList<X>>()
     var disposable: Disposable? = null
     val weatherRepository = WeatherRepository()
 //    val context: Context = Application().applicationContext
-
 
     init {
 //        getWeather(location)
@@ -48,7 +46,7 @@ class WeatherViewModel : ViewModel() {
 
                 it.list.forEach {
                     //                    calendar.time = Date(it.dt.toLong() * 1000)
-                    val simpleDataFormat = SimpleDateFormat("EE/dd/MMMM")
+                    val simpleDataFormat = SimpleDateFormat("EE/dd/MMMM/HH/mm")
                     val dateString = simpleDataFormat.format(Date(it.dt.toLong() * 1000))
                     Log.e("WeatherKt", dateString)
 /*                    Log.e(
@@ -59,8 +57,12 @@ class WeatherViewModel : ViewModel() {
                     )*/
                 }
 
-                weatherListByHoursLiveData.value = ArrayList(weatherList.takeLast(10))
-                Log.e("WeatherKt", "weatherListByHours.size: " + weatherListByHoursLiveData.value?.size.toString())
+//                weatherListByHoursLiveData.value = ArrayList(weatherList.takeLast(10))
+                weatherListByHoursLiveData.value = ArrayList(weatherList.subList(0, 10))
+                Log.e(
+                    "WeatherKt",
+                    "weatherListByHours.size: " + weatherListByHoursLiveData.value?.size.toString()
+                )
 
 /*                calendar.time = Date(it.list[0].dt.toLong() * 1000)
                 Log.e("WeatherKt", calendar.get(Calendar.DAY_OF_MONTH).toString())*/
@@ -69,8 +71,6 @@ class WeatherViewModel : ViewModel() {
                 Log.e("WeatherKt", "onError $throwable")
                 throwable.stackTrace
             })
-
-//        Log.e("WeatherKt", "weatherList $weatherList")
     }
 
     override fun onCleared() {
