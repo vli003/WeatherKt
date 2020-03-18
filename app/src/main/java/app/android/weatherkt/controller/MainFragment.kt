@@ -10,11 +10,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.android.weatherkt.R
-import app.android.weatherkt.model.X
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_main.*
-import java.util.*
 import kotlin.math.roundToInt
 
 
@@ -27,10 +25,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private var weatherByDaysAdapter: WeatherByDaysAdapter? = null
     private lateinit var viewModel: WeatherViewModel
     private var disposable: Disposable? = null
-    private val currentWeatherController: CurrentWeatherController = CurrentWeatherController()
+    private val weatherController: WeatherController = WeatherController()
     private lateinit var txt: String
     private val degree = "\u00B0"
-    private val windSpeed = "m / sec"
+    private val windSpeed = "m/sec"
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,35 +37,28 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         viewModel.currentWeatherLiveData.observe(viewLifecycleOwner,
             Observer { currentWeather ->
-                tv_city.text = currentWeather.city.name
+                tv_city.text = currentWeather.name
                 tv_day_date_month.text =
-                    currentWeatherController.parseTimeStamp(currentWeather.list[0].dt)
-                currentWeatherController.weatherIcon(
-                    currentWeather.list[0].weather[0].main,
-                    iv_big_icon
+                    weatherController.parseTimeStamp(currentWeather.dt, 4)
+                weatherController.weatherIcon(
+                    currentWeather.weather[0].main,
+                    iv_big_icon,
+                    currentWeather.dt
                 )
 
-                txt = currentWeatherController.getMaxMinTemp(
-                    currentWeather.list as ArrayList<X>,
-                    currentWeatherController.getCurrentDate(),
-                    true
-                ).toString() + degree
+                txt = currentWeather.main.temp_max.toInt().toString() + degree
                 tv_temp_max.text = txt
 
-                txt = currentWeatherController.getMaxMinTemp(
-                    currentWeather.list,
-                    currentWeatherController.getCurrentDate(),
-                    false
-                ).toString() + degree
+                txt = currentWeather.main.temp_min.toInt().toString() + degree
                 tv_temp_min.text = txt
 
-                tv_humidity.text = currentWeather.list[0].main.humidity.toString()
+                tv_humidity.text = currentWeather.main.humidity.toString()
 
-                txt = currentWeather.list[0].wind.speed.roundToInt().toString() + windSpeed
+                txt = currentWeather.wind.speed.roundToInt().toString() + windSpeed
                 tv_wind.text = txt
 
-                currentWeatherController.getWindDirection(
-                    currentWeather.list[0].wind.deg,
+                weatherController.getWindDirection(
+                    currentWeather.wind.deg,
                     iv_wind_dir
                 )
             })
@@ -91,8 +82,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             .request(Manifest.permission.ACCESS_COARSE_LOCATION)
             .subscribe { granted: Boolean ->
                 if (granted) {
-                    viewModel.getWeather("kyiv")
-
+                    viewModel.getCurrentWeather("kyiv")
+                    viewModel.getHourlyForecast("kyiv")
                 } else {
                     Log.e("WeatherKt", "granted = false")
                 }

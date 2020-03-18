@@ -1,6 +1,7 @@
 package app.android.weatherkt.controller
 
 import app.android.weatherkt.BuildConfig
+import app.android.weatherkt.model.CurrentWeatherResponse
 import app.android.weatherkt.model.WeatherResponse
 import com.ihsanbal.logging.Level
 import com.ihsanbal.logging.LoggingInterceptor
@@ -44,7 +45,11 @@ class WeatherRepository {
         openWeatherApi = retrofitInstance.create(OpenWeatherApi::class.java)
     }
 
-    fun getWeather(city: String): Single<WeatherResponse> {
-        return openWeatherApi.request(city)
+    fun getHourlyForecast(city: String): Single<WeatherResponse> {
+        return openWeatherApi.getHourlyForecast(city)
+    }
+
+    fun getCurrentWeather(city: String): Single<CurrentWeatherResponse> {
+        return openWeatherApi.getCurrentWeather(city)
     }
 }
