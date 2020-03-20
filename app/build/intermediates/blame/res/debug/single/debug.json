@@ -4,12 +4,12 @@
         "source": "D:\\Natife\\WeatherKt\\app\\src\\main\\res\\drawable\\ic_icon_wind_n.xml"
     },
     {
-        "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_place.xml.flat",
-        "source": "D:\\Natife\\WeatherKt\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_place.xml"
-    },
-    {
         "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_my_location.xml.flat",
         "source": "D:\\Natife\\WeatherKt\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_my_location.xml"
+    },
+    {
+        "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_place.xml.flat",
+        "source": "D:\\Natife\\WeatherKt\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_place.xml"
     },
     {
         "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_search.png.flat",
@@ -152,16 +152,16 @@
         "source": "D:\\Natife\\WeatherKt\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_temp.png"
     },
     {
+        "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_white_day_thunder.xml.flat",
+        "source": "D:\\Natife\\WeatherKt\\app\\src\\main\\res\\drawable\\ic_white_day_thunder.xml"
+    },
+    {
         "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_temp.png.flat",
         "source": "D:\\Natife\\WeatherKt\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_temp.png"
     },
     {
         "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_my_location.png.flat",
         "source": "D:\\Natife\\WeatherKt\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_my_location.png"
-    },
-    {
-        "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_white_day_thunder.xml.flat",
-        "source": "D:\\Natife\\WeatherKt\\app\\src\\main\\res\\drawable\\ic_white_day_thunder.xml"
     },
     {
         "merged": "D:\\Natife\\WeatherKt\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_white_night_shower.xml.flat",

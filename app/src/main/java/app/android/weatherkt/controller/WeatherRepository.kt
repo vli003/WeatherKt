@@ -18,7 +18,7 @@ class WeatherRepository {
     private val openWeatherApi: OpenWeatherApi
     private val baseUrl = "https://api.openweathermap.org/data/2.5/"
 
-    val retrofitInstance: Retrofit
+    private val retrofitInstance: Retrofit
         get() {
             if (retrofit == null) {
                 val client = OkHttpClient.Builder()
@@ -45,11 +45,11 @@ class WeatherRepository {
         openWeatherApi = retrofitInstance.create(OpenWeatherApi::class.java)
     }
 
-    fun getHourlyForecast(city: String): Single<WeatherResponse> {
-        return openWeatherApi.getHourlyForecast(city)
+    fun getHourlyForecast(lat: Double, lon: Double): Single<WeatherResponse> {
+        return openWeatherApi.getHourlyForecast(lat, lon)
     }
 
-    fun getCurrentWeather(city: String): Single<CurrentWeatherResponse> {
-        return openWeatherApi.getCurrentWeather(city)
+    fun getCurrentWeather(lat: Double, lon: Double): Single<CurrentWeatherResponse> {
+        return openWeatherApi.getCurrentWeather(lat, lon)
     }
 }

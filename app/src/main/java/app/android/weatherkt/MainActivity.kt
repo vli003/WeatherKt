@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import app.android.weatherkt.controller.MainFragment
+import com.google.android.gms.common.api.GoogleApiClient
+import com.google.android.gms.location.LocationServices
 
 class MainActivity : AppCompatActivity() {
 

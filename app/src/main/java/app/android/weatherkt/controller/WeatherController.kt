@@ -3,10 +3,10 @@ package app.android.weatherkt.controller
 import android.util.Log
 import android.widget.ImageView
 import app.android.weatherkt.R
+import app.android.weatherkt.model.WeatherContainer
 import app.android.weatherkt.model.X
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.roundToInt
 
 class WeatherController {
 
@@ -26,33 +26,14 @@ class WeatherController {
         nightHours.add("06")
     }
 
-/*    fun parseTimeStamp(dt: Int): String {
-        val simpleDataFormat = SimpleDateFormat("EE, dd MMMM")
+    fun parseTimeStamp(dt: Int, pattern: String): String {
+        val simpleDataFormat = SimpleDateFormat(pattern)
         return simpleDataFormat.format(Date(dt.toLong() * 1000))
-    }*/
-
-    fun parseTimeStamp(dt: Int, type: Int): String {
-        var simpleDataFormat = SimpleDateFormat()
-        when (type) {
-            1 -> simpleDataFormat = SimpleDateFormat("HH")
-            2 -> simpleDataFormat = SimpleDateFormat("HH:mm")
-            3 -> simpleDataFormat = SimpleDateFormat("aa")
-            4 -> simpleDataFormat = SimpleDateFormat("EE, dd MMMM")
-            5 -> simpleDataFormat = SimpleDateFormat("EE")
-        }
-        return simpleDataFormat.format(Date(dt.toLong() * 1000))
-    }
-
-    fun getDateFromTimeStamp(dt: Int): Int {
-        val simpleDataFormat = SimpleDateFormat("dd")
-        return simpleDataFormat.format(Date(dt.toLong() * 1000)).toInt()
     }
 
     fun weatherIcon(weatherType: String, iv: ImageView, dt: Int) {
         val isNight: Boolean = if (dt == -1) false
-        else parseTimeStamp(dt, 1) in nightHours
-
-//        val isNight2: Boolean = parseTimeStamp(dt, 1) in nightHours
+        else parseTimeStamp(dt, "HH") in nightHours
 
         if (isNight) {
             when (weatherType) {
@@ -73,33 +54,11 @@ class WeatherController {
         }
     }
 
-    fun getMaxMinTemp(list: ArrayList<X>, date: Int, isMax: Boolean): Int {
-
-        var temp: Double
-        if (isMax) {
-            temp = -99.99
-            list.forEach {
-                Log.e(
-                    "WatherKt",
-                    "date " + date + " getDateFromTimeStamp(it.dt) " + getDateFromTimeStamp(it.dt)
-                )
-                if (getDateFromTimeStamp(it.dt) == date) {
-                    if (it.main.temp_max > temp) {
-                        temp = it.main.temp_max
-                    }
-                }
-            }
-        } else {
-            temp = 99.99
-            list.forEach {
-                if (getDateFromTimeStamp(it.dt) == date) {
-                    if (it.main.temp_min < temp) {
-                        temp = it.main.temp_min
-                    }
-                }
-            }
-        }
-        return temp.roundToInt()
+    fun getMaxMinValues(x: X, wc: WeatherContainer) {
+        if (x.main.temp_max > wc.tempMax) wc.tempMax = x.main.temp_max
+        if (x.main.temp_min < wc.tempMin) wc.tempMin = x.main.temp_min
+        if (x.main.humidity > wc.humidity) wc.humidity = x.main.humidity
+        if (x.wind.speed > wc.windSpeed) wc.windSpeed = x.wind.speed
     }
 
     fun getCurrentDate(): Int {
@@ -146,5 +105,52 @@ class WeatherController {
         }
         iv.setImageResource(R.drawable.ic_icon_wind_n)
         return
+    }
+
+    fun getDaysInAdvance(daysAgo: Int): Date {
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DAY_OF_YEAR, +daysAgo)
+        return calendar.time
+    }
+
+    fun createWeatherContainer(): WeatherContainer {
+        val calendar = Calendar.getInstance()
+        return WeatherContainer(
+            "Monday",
+            calendar.get(Calendar.DAY_OF_MONTH),
+            SimpleDateFormat("MMMM").format(calendar.time),
+            -99.99,
+            99.99,
+            -1,
+            -1.0,
+            -1,
+            "Rain"
+        )
+    }
+
+    fun resetWeatherContainer(wc: WeatherContainer, day: Int) {
+        wc.tempMax = -99.99
+        wc.tempMin = 99.99
+        wc.humidity = -1
+        wc.windSpeed = -1.0
+        wc.date = getDaysInAdvance(day).date
+    }
+
+    fun addWeatherContainerToList(wc: WeatherContainer, list: ArrayList<WeatherContainer>, x: X) {
+        wc.windDeg = x.wind.deg
+        wc.weatherType = x.weather[0].main
+        list.add(
+            WeatherContainer(
+                wc.dayOfWeek,
+                wc.date,
+                wc.month,
+                wc.tempMax,
+                wc.tempMin,
+                wc.humidity,
+                wc.windSpeed,
+                wc.windDeg,
+                wc.weatherType
+            )
+        )
     }
 }

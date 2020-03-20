@@ -44,7 +44,7 @@ class WeatherByHoursAdapter : RecyclerView.Adapter<WeatherByHoursAdapter.ViewHol
 
         fun bind(x: X) {
             val tv1 = tvTime
-            tv1.text = weatherController.parseTimeStamp(x.dt, 2)
+            tv1.text = weatherController.parseTimeStamp(x.dt, "HH:mm")
 
             val tv2 = tvTemp
             txt = x.main.temp_max.roundToInt().toString() + degree

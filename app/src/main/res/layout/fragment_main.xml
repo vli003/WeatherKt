@@ -29,12 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="City"
             android:textColor="#FFFFFF"
             android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="@id/iv_location"
             app:layout_constraintStart_toEndOf="@id/iv_location"
-            app:layout_constraintTop_toTopOf="@id/iv_location" />
+            app:layout_constraintTop_toTopOf="@id/iv_location"
+            tools:text="City" />
 
         <ImageView
             android:id="@+id/iv_current_loc"
@@ -59,11 +59,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="day, date, month"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@id/tv_city"
-            app:layout_constraintTop_toBottomOf="@id/tv_city" />
+            app:layout_constraintTop_toBottomOf="@id/tv_city"
+            tools:text="day, date, month" />
 
         <ImageView
             android:id="@+id/iv_big_icon"
@@ -105,54 +105,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="MAX\u2103"
             android:textColor="#FFFFFF"
             android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="@id/iv_temp"
             app:layout_constraintStart_toEndOf="@id/iv_temp"
-            app:layout_constraintTop_toTopOf="@id/iv_temp" />
+            app:layout_constraintTop_toTopOf="@id/iv_temp"
+            tools:text="MAX\u2103" />
 
         <TextView
             android:id="@+id/tv_separ"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" / "
             android:textColor="#FFFFFF"
             android:textSize="26sp"
             app:layout_constraintStart_toEndOf="@id/tv_temp_max"
-            app:layout_constraintTop_toTopOf="@id/tv_temp_max" />
+            app:layout_constraintTop_toTopOf="@id/tv_temp_max"
+            tools:text=" / " />
 
         <TextView
             android:id="@+id/tv_temp_min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MIN\u2103"
             android:textColor="#FFFFFF"
             android:textSize="26sp"
             app:layout_constraintStart_toEndOf="@id/tv_separ"
-            app:layout_constraintTop_toTopOf="@id/tv_separ" />
+            app:layout_constraintTop_toTopOf="@id/tv_separ"
+            tools:text="MIN\u2103" />
 
         <TextView
             android:id="@+id/tv_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="40 %"
             android:textColor="#FFFFFF"
             android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="@id/iv_humidity"
             app:layout_constraintStart_toStartOf="@id/tv_temp_max"
-            app:layout_constraintTop_toTopOf="@id/iv_humidity" />
+            app:layout_constraintTop_toTopOf="@id/iv_humidity"
+            tools:text="40 %" />
 
         <TextView
             android:id="@+id/tv_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3m/sec"
             android:textColor="#FFFFFF"
             android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="@id/iv_wind"
             app:layout_constraintStart_toStartOf="@id/tv_humidity"
-            app:layout_constraintTop_toTopOf="@id/iv_wind" />
+            app:layout_constraintTop_toTopOf="@id/iv_wind"
+            tools:text="3m/sec" />
 
         <ImageView
             android:id="@+id/iv_wind_dir"

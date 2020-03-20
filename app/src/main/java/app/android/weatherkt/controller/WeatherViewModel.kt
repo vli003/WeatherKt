@@ -1,5 +1,6 @@
 package app.android.weatherkt.controller
 
+import android.location.Location
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,164 +11,72 @@ import app.android.weatherkt.model.X
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.ArrayList
 
 class WeatherViewModel : ViewModel() {
 
-    var weatherList = ArrayList<X>()
+    var txtLiveData = MutableLiveData<String>()
     var currentWeatherLiveData = MutableLiveData<CurrentWeatherResponse>()
     var weatherListByHoursLiveData = MutableLiveData<ArrayList<X>>()
     var weatherListByDaysLiveData = MutableLiveData<ArrayList<WeatherContainer>>()
-    var disposable: Disposable? = null
-    val weatherRepository = WeatherRepository()
-//    val weatherController: WeatherController = WeatherController()
-//    val context: Context = Application().applicationContext
+    private var disposable: Disposable? = null
+    private val weatherRepository = WeatherRepository()
+    private val wController: WeatherController = WeatherController()
 
 
-    init {
-//        getWeather(location)
-
-
-    }
-
-/*    fun getWeather(location: Location) {
-
-    }*/
-
-    fun getCurrentWeather(city: String) {
+    fun getCurrentWeather(location: Location) {
         if (disposable != null) {
             disposable?.dispose()
         }
-
-        disposable = weatherRepository.getCurrentWeather(city)
+        disposable = weatherRepository.getCurrentWeather(location.latitude, location.longitude)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(fun(it: CurrentWeatherResponse) {
                 currentWeatherLiveData.value = it
-
-//                Log.e("WeatherKt", "CurrentWeatherResponse $it")
-
             }, fun(throwable: Throwable) {
-                Log.e("WeatherKt", "onError $throwable")
+                Log.e("WeatherKt", "getCurrentWeather onError: ${throwable.message}")
                 throwable.stackTrace
+                txtLiveData.value = throwable.message
             })
     }
 
-    fun getHourlyForecast(city: String) {
+    fun getHourlyForecast(location: Location) {
 /*        if (disposable != null) {
             disposable?.dispose()
         }*/
 
-        disposable = weatherRepository.getHourlyForecast(city)
+        disposable = weatherRepository.getHourlyForecast(location.latitude, location.longitude)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(fun(it2: WeatherResponse) {
-                weatherList = ArrayList(it2.list)
-//                weatherList = it.list as ArrayList<X>
+            .subscribe(fun(response: WeatherResponse) {
+                weatherListByHoursLiveData.value = ArrayList(response.list.subList(0, 10))
 
-
-//                val calendar = Calendar.getInstance()
-
-
-                var list: ArrayList<WeatherContainer> = ArrayList()
-                var dayOfWeek = "Monday"
-                var maxTemp = -99.99
-                var minTemp = 99.99
-                var humidity = -1
-                var windSpeed = -1.0
+                val list: ArrayList<WeatherContainer> = ArrayList()
+                val wc = wController.createWeatherContainer()
                 var day = 0
                 var count = 0
-                val calendar = Calendar.getInstance()
-                var date = calendar.get(Calendar.DAY_OF_MONTH)
-                var month = SimpleDateFormat("MMMM").format(calendar.time)
 
-                val simpleDataFormat = SimpleDateFormat("dd")
-                val simpleDataFormat2 = SimpleDateFormat("EE")
-                val simpleDataFormat3 = SimpleDateFormat("dd MMMM")
-//                    val simpleDataFormat = SimpleDateFormat("EE/dd/MMMM/HH/mm/aa")
-                var dateString: String
+                response.list.forEach {
+                    if (wController.parseTimeStamp(it.dt, "dd").toInt() == wc.date) {
+                        wController.getMaxMinValues(it, wc)
+                        wc.dayOfWeek = wController.parseTimeStamp(it.dt, "EE")
 
-                it2.list.forEach {
-                    //                    calendar.time = Date(it.dt.toLong() * 1000)
-                    dateString = simpleDataFormat.format(Date(it.dt.toLong() * 1000))
-
-                    Log.e("WeatherKt", dateString)
-/*                    Log.e(
-                        "WeatherKt",
-                        "day: " + calendar.get(Calendar.DAY_OF_MONTH).toString() + " time: " + calendar.get(
-                            Calendar.DAY_OF_WEEK
-                        ).toString()
-                    )*/
-
-
-
-                    if (dateString.toInt() == date) {
-                        Log.e("WeatherKt", "dateString: $dateString date $date")
-                        if (it.main.temp_max > maxTemp) maxTemp = it.main.temp_max
-                        if (it.main.temp_min < minTemp) minTemp = it.main.temp_min
-                        if (it.main.humidity > humidity) humidity = it.main.humidity
-                        if (it.wind.speed > windSpeed) windSpeed = it.wind.speed
-                        dayOfWeek = simpleDataFormat2.format(Date(it.dt.toLong() * 1000))
-
-                        if (count == it2.list.size - 1) {
-                            val weatherContainer = WeatherContainer(
-                                dayOfWeek,
-                                date,
-                                month.toString(),
-                                maxTemp,
-                                minTemp,
-                                humidity,
-                                windSpeed,
-                                it.wind.deg,
-                                it.weather[0].main
-                            )
-                            list.add(weatherContainer)
-
-                            Log.e("WeatherKt", "dateString2: $dateString date2: $date")
-                            Log.e("WeatherKt", "weatherContainer: $weatherContainer")
+                        if (count == response.list.size - 1) {
+                            wController.addWeatherContainerToList(wc, list, it)
                         }
                     } else {
-
-                        if (maxTemp != -99.99) {
-                            val weatherContainer = WeatherContainer(
-                                dayOfWeek,
-                                date,
-                                month.toString(),
-                                maxTemp,
-                                minTemp,
-                                humidity,
-                                windSpeed,
-                                it.wind.deg,
-                                it.weather[0].main
-                            )
-                            list.add(weatherContainer)
-
-                            Log.e("WeatherKt", "dateString2: $dateString date2: $date")
-                            Log.e("WeatherKt", "weatherContainer: $weatherContainer")
+                        if (wc.tempMax != -99.99) {
+                            wController.addWeatherContainerToList(wc, list, it)
                         }
-
-                        maxTemp = -99.99
-                        minTemp = 99.99
-                        humidity = -1
-                        windSpeed = -1.0
                         day++
-                        val dateDate = getDaysAgo(day)
-                        date = dateDate.date
+                        wController.resetWeatherContainer(wc, day)
                     }
                     count++
                 }
-
-//                weatherListByHoursLiveData.value = ArrayList(weatherList.takeLast(10))
-                weatherListByHoursLiveData.value = ArrayList(weatherList.subList(0, 10))
                 weatherListByDaysLiveData.value = list
-
-/*                calendar.time = Date(it.list[0].dt.toLong() * 1000)
-                Log.e("WeatherKt", calendar.get(Calendar.DAY_OF_MONTH).toString())*/
             }, fun(throwable: Throwable) {
-                Log.e("WeatherKt", "onError $throwable")
+                Log.e("WeatherKt", "getHourlyForecast onError: ${throwable.message}")
                 throwable.stackTrace
+                txtLiveData.value = throwable.message
             })
     }
 
@@ -176,12 +85,5 @@ class WeatherViewModel : ViewModel() {
         if (disposable != null) {
             disposable?.dispose()
         }
-    }
-
-    fun getDaysAgo(daysAgo: Int): Date {
-        val calendar = Calendar.getInstance()
-        calendar.add(Calendar.DAY_OF_YEAR, +daysAgo)
-
-        return calendar.time
     }
 }

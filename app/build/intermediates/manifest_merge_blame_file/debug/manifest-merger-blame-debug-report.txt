@@ -57,17 +57,32 @@
 32-->D:\Natife\WeatherKt\app\src\main\AndroidManifest.xml:22:27-74
 33            </intent-filter>
 34        </activity>
-35
-36        <provider
-36-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
-37            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-37-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
-38            android:authorities="app.android.weatherkt.lifecycle-process"
-38-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
-39            android:exported="false"
-39-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
-40            android:multiprocess="true" />
-40-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
-41    </application>
-42
-43</manifest>
+35        <activity
+35-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\c04cb745a39d3882e271ee531c5bbe82\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+36            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+36-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\c04cb745a39d3882e271ee531c5bbe82\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+37            android:exported="false"
+37-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\c04cb745a39d3882e271ee531c5bbe82\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+38            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+38-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\c04cb745a39d3882e271ee531c5bbe82\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+39
+40        <meta-data
+40-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\e4575fca56c005d4d47846ecc29240e2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+41            android:name="com.google.android.gms.version"
+41-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\e4575fca56c005d4d47846ecc29240e2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+42            android:value="@integer/google_play_services_version" />
+42-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\e4575fca56c005d4d47846ecc29240e2\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+43
+44        <provider
+44-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+45            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+45-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+46            android:authorities="app.android.weatherkt.lifecycle-process"
+46-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+47            android:exported="false"
+47-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+48            android:multiprocess="true" />
+48-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Vitalii\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+49    </application>
+50
+51</manifest>
