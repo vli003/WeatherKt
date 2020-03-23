@@ -23,11 +23,11 @@ class WeatherViewModel : ViewModel() {
     private val wController: WeatherController = WeatherController()
 
 
-    fun getCurrentWeather(location: Location) {
+    fun getCurrentWeather(latitude: Double, longitude: Double) {
         if (disposable != null) {
             disposable?.dispose()
         }
-        disposable = weatherRepository.getCurrentWeather(location.latitude, location.longitude)
+        disposable = weatherRepository.getCurrentWeather(latitude, longitude)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(fun(it: CurrentWeatherResponse) {
@@ -39,12 +39,12 @@ class WeatherViewModel : ViewModel() {
             })
     }
 
-    fun getHourlyForecast(location: Location) {
+    fun getHourlyForecast(latitude: Double, longitude: Double) {
 /*        if (disposable != null) {
             disposable?.dispose()
         }*/
 
-        disposable = weatherRepository.getHourlyForecast(location.latitude, location.longitude)
+        disposable = weatherRepository.getHourlyForecast(latitude, longitude)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(fun(response: WeatherResponse) {
