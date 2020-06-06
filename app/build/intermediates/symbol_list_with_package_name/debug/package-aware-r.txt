@@ -1166,6 +1166,9 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_10
+drawable ic_7
+drawable ic_8
 drawable ic_group_4
 drawable ic_humidity
 drawable ic_icon_wind_e

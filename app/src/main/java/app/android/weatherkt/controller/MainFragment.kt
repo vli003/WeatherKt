@@ -174,8 +174,8 @@ class MainFragment : Fragment(R.layout.fragment_main), View.OnClickListener {
             Log.e("LOG", "3")
             val intent =
                 PlaceAutocomplete.IntentBuilder(
-                        PlaceAutocomplete.MODE_FULLSCREEN
-                    )
+                    PlaceAutocomplete.MODE_FULLSCREEN
+                )
                     .build(activity)
             startActivityForResult(intent, autocompleteRequest)
         } catch (e: GooglePlayServicesRepairableException) {
